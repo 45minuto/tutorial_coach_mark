@@ -1,15 +1,3 @@
-# 0.6.0+1
-
-- update README
-
-# 0.6.0
-
-- Improvements in the project structure
-- BREAKING CHANGE: rename `onClickSkip` to `onSkip`
-- BREAKING CHANGE: rename `CustomTargetPosition` to `CustomTargetContentPosition`
-- BREAKING CHANGE: rename `AlignContent` to `ContentAlign`
-- BREAKING CHANGE: rename `ContentTarget` to `TargetContent`
-
 # 0.5.3
 
 - Fix issue #33. Thanks [cwyu-Ivan](https://github.com/cwyu-Ivan)

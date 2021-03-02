@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tutorial_coach_mark/src/target/target_content.dart';
-import 'package:tutorial_coach_mark/src/target/target_focus.dart';
-import 'package:tutorial_coach_mark/src/target/target_position.dart';
-import 'package:tutorial_coach_mark/src/util.dart';
-import 'package:tutorial_coach_mark/src/widgets/animated_focus_light.dart';
+import 'package:tutorial_coach_mark/animated_focus_light.dart';
+import 'package:tutorial_coach_mark/content_target.dart';
+import 'package:tutorial_coach_mark/target_focus.dart';
+import 'package:tutorial_coach_mark/target_position.dart';
+import 'package:tutorial_coach_mark/util.dart';
 
 class TutorialCoachMarkWidget extends StatefulWidget {
   const TutorialCoachMarkWidget({
@@ -15,7 +15,7 @@ class TutorialCoachMarkWidget extends StatefulWidget {
     this.clickOverlay,
     this.alignSkip = Alignment.bottomRight,
     this.textSkip = "SKIP",
-    this.onClickSkip,
+    this.clickSkip,
     this.colorShadow = Colors.black,
     this.opacityShadow = 0.8,
     this.textStyleSkip = const TextStyle(color: Colors.white),
@@ -31,7 +31,7 @@ class TutorialCoachMarkWidget extends StatefulWidget {
   final Color colorShadow;
   final double opacityShadow;
   final double paddingFocus;
-  final Function() onClickSkip;
+  final Function() clickSkip;
   final AlignmentGeometry alignSkip;
   final String textSkip;
   final TextStyle textStyleSkip;
@@ -198,8 +198,8 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
         child: AnimatedOpacity(
           opacity: showContent ? 1 : 0,
           duration: Duration(milliseconds: 300),
-          child: GestureDetector(
-            onTap: widget.onClickSkip,
+          child: InkWell(
+            onTap: widget.clickSkip,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(

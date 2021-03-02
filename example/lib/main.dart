@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tutorial_coach_mark/animated_focus_light.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 void main() => runApp(MyApp());
@@ -36,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     initTargets();
-    showTutorial();
+    WidgetsBinding.instance.addPostFrameCallback(_afterLayout);
     super.initState();
   }
 
@@ -393,12 +394,18 @@ class _MyHomePageState extends State<MyHomePage> {
       onClickTarget: (target) {
         print('onClickTarget: $target');
       },
-      onSkip: () {
+      onClickSkip: () {
         print("skip");
       },
       onClickOverlay: (target) {
         print('onClickOverlay: $target');
       },
     )..show();
+  }
+
+  void _afterLayout(_) {
+    Future.delayed(Duration(milliseconds: 100), () {
+      showTutorial();
+    });
   }
 }

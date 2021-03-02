@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tutorial_coach_mark/src/paint/light_paint.dart';
-import 'package:tutorial_coach_mark/src/paint/light_paint_rect.dart';
-import 'package:tutorial_coach_mark/src/target/target_focus.dart';
-import 'package:tutorial_coach_mark/src/target/target_position.dart';
-import 'package:tutorial_coach_mark/src/util.dart';
+import 'package:tutorial_coach_mark/light_paint.dart';
+import 'package:tutorial_coach_mark/light_paint_rect.dart';
+import 'package:tutorial_coach_mark/target_focus.dart';
+import 'package:tutorial_coach_mark/target_position.dart';
+import 'package:tutorial_coach_mark/util.dart';
+
+enum ShapeLightFocus { Circle, RRect }
 
 class AnimatedFocusLight extends StatefulWidget {
   final List<TargetFocus> targets;
@@ -279,7 +281,9 @@ class AnimatedFocusLightState extends State<AnimatedFocusLight> with TickerProvi
   }
 
   BorderRadius _betBorderRadiusTarget() {
-    double radius = _targetFocus?.shape == ShapeLightFocus.Circle ? (_targetPosition?.size?.width ?? BORDER_RADIUS_DEFAULT) : _targetFocus?.radius ?? BORDER_RADIUS_DEFAULT;
+    double radius = _targetFocus?.shape == ShapeLightFocus.Circle
+        ? (_targetPosition?.size?.width ?? BORDER_RADIUS_DEFAULT)
+        : _targetFocus?.radius ?? BORDER_RADIUS_DEFAULT;
     return BorderRadius.circular(radius);
   }
 }
