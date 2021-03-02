@@ -197,13 +197,9 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
     return Positioned(
       top: 60,
       right: 15,
-      child: AnimatedOpacity(
-        opacity: showContent ? 1 : 0,
-        duration: Duration(milliseconds: 300),
-        child: GestureDetector(
-          onTap: widget.clickSkip,
-          child: widget.child,
-        ),
+      child: GestureDetector(
+        onTap: widget.clickSkip,
+        child: widget.child,
       ),
     );
   }
