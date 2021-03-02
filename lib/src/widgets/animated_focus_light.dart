@@ -60,7 +60,7 @@ class AnimatedFocusLightState extends State<AnimatedFocusLight> with TickerProvi
   void initState() {
     _targetFocus = widget?.targets[_currentFocus];
     _controller = AnimationController(
-      value: this,
+      vsync: this,
       duration: widget.focusAnimationDuration ?? Duration(milliseconds: 600),
     );
 
@@ -70,7 +70,7 @@ class AnimatedFocusLightState extends State<AnimatedFocusLight> with TickerProvi
     );
 
     _controllerPulse = AnimationController(
-      value: this,
+      vsync: this,
       duration: widget.pulseAnimationDuration ?? Duration(milliseconds: 500),
     );
 
