@@ -6,23 +6,24 @@ import 'package:tutorial_coach_mark/target_position.dart';
 import 'package:tutorial_coach_mark/util.dart';
 
 class TutorialCoachMarkWidget extends StatefulWidget {
-  const TutorialCoachMarkWidget({
-    Key key,
-    this.targets,
-    this.finish,
-    this.paddingFocus = 10,
-    this.clickTarget,
-    this.clickOverlay,
-    this.alignSkip = Alignment.bottomRight,
-    this.textSkip = "SKIP",
-    this.clickSkip,
-    this.colorShadow = Colors.black,
-    this.opacityShadow = 0.8,
-    this.textStyleSkip = const TextStyle(color: Colors.white),
-    this.hideSkip,
-    this.focusAnimationDuration,
-    this.pulseAnimationDuration,
-  }) : super(key: key);
+  const TutorialCoachMarkWidget(
+      {Key key,
+      this.targets,
+      this.finish,
+      this.paddingFocus = 10,
+      this.clickTarget,
+      this.clickOverlay,
+      this.alignSkip = Alignment.bottomRight,
+      this.textSkip = "SKIP",
+      this.clickSkip,
+      this.colorShadow = Colors.black,
+      this.opacityShadow = 0.8,
+      this.textStyleSkip = const TextStyle(color: Colors.white),
+      this.hideSkip,
+      this.focusAnimationDuration,
+      this.pulseAnimationDuration,
+      this.child})
+      : super(key: key);
 
   final List<TargetFocus> targets;
   final Function(TargetFocus) clickTarget;
@@ -38,6 +39,7 @@ class TutorialCoachMarkWidget extends StatefulWidget {
   final bool hideSkip;
   final Duration focusAnimationDuration;
   final Duration pulseAnimationDuration;
+  final Widget child;
 
   @override
   TutorialCoachMarkWidgetState createState() => TutorialCoachMarkWidgetState();
@@ -198,15 +200,9 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
         child: AnimatedOpacity(
           opacity: showContent ? 1 : 0,
           duration: Duration(milliseconds: 300),
-          child: InkWell(
+          child: GestureDetector(
             onTap: widget.clickSkip,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                widget.textSkip,
-                style: widget.textStyleSkip,
-              ),
-            ),
+            child: widget.child,
           ),
         ),
       ),
