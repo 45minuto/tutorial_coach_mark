@@ -194,16 +194,15 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
     if (widget.hideSkip) {
       return SizedBox.shrink();
     }
-    return Align(
-      alignment: currentTarget?.alignSkip ?? widget.alignSkip,
-      child: SafeArea(
-        child: AnimatedOpacity(
-          opacity: showContent ? 1 : 0,
-          duration: Duration(milliseconds: 300),
-          child: GestureDetector(
-            onTap: widget.clickSkip,
-            child: widget.child,
-          ),
+    return Positioned(
+      top: 60,
+      right: 15,
+      child: AnimatedOpacity(
+        opacity: showContent ? 1 : 0,
+        duration: Duration(milliseconds: 300),
+        child: GestureDetector(
+          onTap: widget.clickSkip,
+          child: widget.child,
         ),
       ),
     );
