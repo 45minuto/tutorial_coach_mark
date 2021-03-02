@@ -60,7 +60,7 @@ class AnimatedFocusLightState extends State<AnimatedFocusLight> with TickerProvi
   void initState() {
     _targetFocus = widget?.targets[_currentFocus];
     _controller = AnimationController(
-      vsync: this,
+      value: this,
       duration: widget.focusAnimationDuration ?? Duration(milliseconds: 600),
     );
 
@@ -70,7 +70,7 @@ class AnimatedFocusLightState extends State<AnimatedFocusLight> with TickerProvi
     );
 
     _controllerPulse = AnimationController(
-      vsync: this,
+      value: this,
       duration: widget.pulseAnimationDuration ?? Duration(milliseconds: 500),
     );
 
@@ -279,9 +279,7 @@ class AnimatedFocusLightState extends State<AnimatedFocusLight> with TickerProvi
   }
 
   BorderRadius _betBorderRadiusTarget() {
-    double radius = _targetFocus?.shape == ShapeLightFocus.Circle
-        ? (_targetPosition?.size?.width ?? BORDER_RADIUS_DEFAULT)
-        : _targetFocus?.radius ?? BORDER_RADIUS_DEFAULT;
+    double radius = _targetFocus?.shape == ShapeLightFocus.Circle ? (_targetPosition?.size?.width ?? BORDER_RADIUS_DEFAULT) : _targetFocus?.radius ?? BORDER_RADIUS_DEFAULT;
     return BorderRadius.circular(radius);
   }
 }
