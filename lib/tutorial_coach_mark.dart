@@ -24,6 +24,7 @@ class TutorialCoachMark {
   final GlobalKey<TutorialCoachMarkWidgetState> _widgetKey = GlobalKey();
   final Duration focusAnimationDuration;
   final Duration pulseAnimationDuration;
+  final Widget child;
 
   OverlayEntry _overlayEntry;
 
@@ -43,6 +44,7 @@ class TutorialCoachMark {
     this.opacityShadow = 0.8,
     this.focusAnimationDuration = const Duration(milliseconds: 600),
     this.pulseAnimationDuration = const Duration(milliseconds: 500),
+    this.child,
   }) : assert(targets != null, opacityShadow >= 0 && opacityShadow <= 1);
 
   OverlayEntry _buildOverlay() {
@@ -61,6 +63,7 @@ class TutorialCoachMark {
           hideSkip: hideSkip,
           colorShadow: colorShadow,
           opacityShadow: opacityShadow,
+          child: child,
           focusAnimationDuration: focusAnimationDuration,
           pulseAnimationDuration: pulseAnimationDuration,
           finish: finish,
