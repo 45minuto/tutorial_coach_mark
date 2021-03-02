@@ -13,16 +13,16 @@ class CustomTargetContentPosition {
   }
 }
 
-enum ContentAlign { top, bottom, left, right, custom }
+enum AlignContent { top, bottom, left, right, custom }
 
-class TargetContent {
-  TargetContent({
-    this.align = ContentAlign.bottom,
+class ContentTarget {
+  ContentTarget({
+    this.align = AlignContent.bottom,
     this.child,
     this.customPosition,
-  }) : assert(child != null && !(align == ContentAlign.custom && customPosition == null));
+  }) : assert(child != null && !(align == AlignContent.custom && customPosition == null));
 
-  final ContentAlign align;
+  final AlignContent align;
   final CustomTargetContentPosition customPosition;
   final Widget child;
   @override

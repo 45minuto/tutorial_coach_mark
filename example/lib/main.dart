@@ -158,8 +158,8 @@ class _MyHomePageState extends State<MyHomePage> {
         identify: "Target 0",
         keyTarget: keyButton1,
         contents: [
-          TargetContent(
-              align: ContentAlign.bottom,
+          ContentTarget(
+              align: AlignContent.bottom,
               child: Container(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -188,8 +188,8 @@ class _MyHomePageState extends State<MyHomePage> {
         keyTarget: keyButton,
         color: Colors.purple,
         contents: [
-          TargetContent(
-            align: ContentAlign.bottom,
+          ContentTarget(
+            align: AlignContent.bottom,
             child: Container(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -219,8 +219,8 @@ class _MyHomePageState extends State<MyHomePage> {
       identify: "Target 2",
       keyTarget: keyButton4,
       contents: [
-        TargetContent(
-            align: ContentAlign.left,
+        ContentTarget(
+            align: AlignContent.left,
             child: Container(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -240,8 +240,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             )),
-        TargetContent(
-            align: ContentAlign.top,
+        ContentTarget(
+            align: AlignContent.top,
             child: Container(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -268,8 +268,8 @@ class _MyHomePageState extends State<MyHomePage> {
       identify: "Target 3",
       keyTarget: keyButton5,
       contents: [
-        TargetContent(
-            align: ContentAlign.right,
+        ContentTarget(
+            align: AlignContent.right,
             child: Container(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -296,8 +296,8 @@ class _MyHomePageState extends State<MyHomePage> {
       identify: "Target 4",
       keyTarget: keyButton3,
       contents: [
-        TargetContent(
-            align: ContentAlign.top,
+        ContentTarget(
+            align: AlignContent.top,
             child: Container(
               child: Column(
                 children: <Widget>[
@@ -334,8 +334,8 @@ class _MyHomePageState extends State<MyHomePage> {
       identify: "Target 5",
       keyTarget: keyButton2,
       contents: [
-        TargetContent(
-            align: ContentAlign.top,
+        ContentTarget(
+            align: AlignContent.top,
             child: Container(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -354,8 +354,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             )),
-        TargetContent(
-            align: ContentAlign.bottom,
+        ContentTarget(
+            align: AlignContent.bottom,
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[

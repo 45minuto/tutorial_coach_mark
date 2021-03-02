@@ -127,7 +127,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
 
     children = currentTarget.contents.map<Widget>((i) {
       switch (i.align) {
-        case ContentAlign.bottom:
+        case AlignContent.bottom:
           {
             weight = MediaQuery.of(context).size.width;
             left = 0;
@@ -135,7 +135,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
             bottom = null;
           }
           break;
-        case ContentAlign.top:
+        case AlignContent.top:
           {
             weight = MediaQuery.of(context).size.width;
             left = 0;
@@ -143,7 +143,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
             bottom = haloHeight + (MediaQuery.of(context).size.height - positioned.dy);
           }
           break;
-        case ContentAlign.left:
+        case AlignContent.left:
           {
             weight = positioned.dx - haloWidth;
             left = 0;
@@ -151,7 +151,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
             bottom = null;
           }
           break;
-        case ContentAlign.right:
+        case AlignContent.right:
           {
             left = positioned.dx + haloWidth;
             top = positioned.dy - target.size.height / 2 - haloHeight;
@@ -159,7 +159,7 @@ class TutorialCoachMarkWidgetState extends State<TutorialCoachMarkWidget> {
             weight = MediaQuery.of(context).size.width - left;
           }
           break;
-        case ContentAlign.custom:
+        case AlignContent.custom:
           {
             left = i.customPosition.left;
             top = i.customPosition.top;

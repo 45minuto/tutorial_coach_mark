@@ -21,7 +21,7 @@ class TargetFocus {
   final dynamic identify;
   final GlobalKey keyTarget;
   final TargetPosition targetPosition;
-  final List<TargetContent> contents;
+  final List<ContentTarget> contents;
   final ShapeLightFocus shape;
   final double radius;
   final bool enableOverlayTab;
